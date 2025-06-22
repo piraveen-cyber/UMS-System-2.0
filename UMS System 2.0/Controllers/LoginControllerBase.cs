@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Data.SQLite;
-using UnicomTICManagementSystem.Models;
+﻿using System.Data.SQLite;
 using UnicomTICManagementSystem.Repositories;
 
 namespace UnicomTICManagementSystem.Controllers
 {
-    public static class LoginController
+    public static class LoginControllerBase
     {
         public static string CheckLogin(string username, string password)
         {

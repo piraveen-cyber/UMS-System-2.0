@@ -1,4 +1,6 @@
-﻿namespace UnicomTICManagementSystem.Views
+﻿using System;
+
+namespace UnicomTICManagementSystem.Views
 {
     partial class LoginForm
     {
@@ -95,6 +97,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

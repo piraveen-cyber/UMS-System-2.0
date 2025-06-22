@@ -67,10 +67,9 @@
   <ItemGroup>
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
-    <Compile Include="Controllers\IStudentController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LoginControllerBase.cs" />
     <Compile Include="Controllers\MarkController.cs" />
-    <Compile Include="Controllers\Room.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
