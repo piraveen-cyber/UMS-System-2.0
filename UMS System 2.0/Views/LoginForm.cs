@@ -7,64 +7,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UMS_System_2._0.Controllers;
+using UnicomTICManagementSystem.Controllers;
 
-namespace UMS_System_2._0.Views
+namespace UnicomTICManagementSystem.Views
 {
     public partial class LoginForm : Form
     {
         public LoginForm()
         {
             InitializeComponent();
-            LoadRoles();
         }
 
-        private void LoadRoles()
+        private void label1_Click(object sender, EventArgs e)
         {
-            cmbRole.Items.Clear();
-            cmbRole.Items.Add("Admin");
-            cmbRole.Items.Add("Staff");
-            cmbRole.Items.Add("Lecturer");
-            cmbRole.Items.Add("Student");
-            cmbRole.SelectedIndex = 0;
+
         }
 
-        private async void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-            string selectedRole = cmbRole.SelectedItem?.ToString();
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            string role = LoginController.CheckLogin(username, password);
+
+            if (role != null)
             {
-                MessageBox.Show("Please enter both username and password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show($"Login successful! Role: {role}");
+                this.Hide();
+                MainForm mainForm = new MainForm(role);
+                mainForm.Show();
             }
-
-            string role = await LoginController.AuthenticateAsync(username, password);
-
-            if (role == null)
+            else
             {
-                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("Wrong username or password.");
             }
-
-            if (role != selectedRole)
-            {
-                MessageBox.Show($"Role mismatch. You are registered as '{role}', not '{selectedRole}'.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            MessageBox.Show($"Welcome {role}!", "Login Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // TODO: Redirect to MainForm or dashboard
-            // MainForm dashboard = new MainForm(role);
-            // dashboard.Show();
-            // this.Hide();
         }
-    
 
         private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

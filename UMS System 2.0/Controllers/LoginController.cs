@@ -1,18 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UMS_System_2._0.Repositories;
+﻿using System.Data.SQLite;
+using UnicomTICManagementSystem.Repositories;
 
-namespace UMS_System_2._0.Controllers
+namespace UnicomTICManagementSystem.Controllers
 {
     public static class LoginController
     {
-        public static async Task<string> AuthenticateAsync(string username, string password)
+        public static string CheckLogin(string username, string password)
         {
-            var user = await DatabaseManager.Instance.GetUserAsync(username, password);
-            return user?.Role;
+            using (var conn = DatabaseManager.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT Role FROM Users WHERE Username = @username AND Password = @password";
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    var result = cmd.ExecuteScalar();
+                    return result?.ToString(); // Returns role or null
+                }
+            }
         }
     }
 }

@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UMS_System_2._0.Models
+namespace UnicomTICManagementSystem.Models
 {
-    internal class Student
+    public class Student
     {
+        public int StudentID { get; set; }
+        public string Name { get; set; }
+        public int CourseID { get; set; }
     }
 }

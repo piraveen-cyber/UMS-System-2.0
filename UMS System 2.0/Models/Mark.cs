@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UMS_System_2._0.Models
+namespace UnicomTICManagementSystem.Models
 {
-    internal class Mark
+    public class Mark
     {
+        public int MarkID { get; set; }
+        public int StudentID { get; set; }
+        public int ExamID { get; set; }
+        public int Score { get; set; }
     }
 }

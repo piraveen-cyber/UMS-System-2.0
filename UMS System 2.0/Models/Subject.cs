@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UMS_System_2._0.Models
+namespace UnicomTICManagementSystem.Models
 {
-    internal class Subject
+    public class Subject
     {
+        public int SubjectID { get; set; }
+        public string SubjectName { get; set; }
+        public int CourseID { get; set; }
     }
 }
