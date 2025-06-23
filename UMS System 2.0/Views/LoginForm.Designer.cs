@@ -40,10 +40,10 @@ namespace UnicomTICManagementSystem.Views
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mytupi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(81, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 16);
+            this.label1.Size = new System.Drawing.Size(78, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
@@ -51,10 +51,10 @@ namespace UnicomTICManagementSystem.Views
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Mytupi", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(81, 124);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 16);
+            this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
@@ -80,6 +80,7 @@ namespace UnicomTICManagementSystem.Views
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // LoginForm
             // 

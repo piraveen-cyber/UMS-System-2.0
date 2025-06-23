@@ -25,23 +25,40 @@ namespace UnicomTICManagementSystem.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
-            string password = txtPassword.Text.Trim();
-
-            string role = LoginController.CheckLogin(username, password);
-
-            if (role != null)
+            try
             {
-                MessageBox.Show($"Login successful! Role: {role}");
-                this.Hide();
-                MainForm mainForm = new MainForm(role);
-                mainForm.Show();
+                string username = txtUsername.Text.Trim();
+                string password = txtPassword.Text.Trim();
+
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                {
+                    MessageBox.Show("Please enter both username and password.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string role = LoginController.CheckLogin(username, password);
+
+                if (role != null)
+                {
+                    MessageBox.Show($"Login successful! Role: {role}", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+
+                    MainForm mainForm = new MainForm(role, username);
+                    mainForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPassword.Clear();
+                    txtPassword.Focus();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Wrong username or password.");
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
@@ -52,5 +69,7 @@ namespace UnicomTICManagementSystem.Views
         {
 
         }
+
+       
     }
 }
