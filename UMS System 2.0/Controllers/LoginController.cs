@@ -20,5 +20,23 @@ namespace UnicomTICManagementSystem.Controllers
                 }
             }
         }
+
+
+
+
+        public static bool IsUserExists(string username)
+        {
+            using (var conn = DatabaseManager.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM Users WHERE Username = @username";
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    long count = (long)cmd.ExecuteScalar();
+                    return count > 0; // Returns true if user exists
+                }
+            }
+        }
     }
 }
