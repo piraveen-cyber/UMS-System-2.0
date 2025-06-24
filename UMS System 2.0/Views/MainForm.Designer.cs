@@ -54,7 +54,7 @@
             this.btnTimetables.Font = new System.Drawing.Font("Mytupi", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnTimetables.Location = new System.Drawing.Point(553, 285);
             this.btnTimetables.Name = "btnTimetables";
-            this.btnTimetables.Size = new System.Drawing.Size(75, 23);
+            this.btnTimetables.Size = new System.Drawing.Size(87, 23);
             this.btnTimetables.TabIndex = 14;
             this.btnTimetables.Text = "Timetables";
             this.btnTimetables.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@
             this.btnMarks.Font = new System.Drawing.Font("Mytupi", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnMarks.Location = new System.Drawing.Point(552, 231);
             this.btnMarks.Name = "btnMarks";
-            this.btnMarks.Size = new System.Drawing.Size(75, 23);
+            this.btnMarks.Size = new System.Drawing.Size(88, 23);
             this.btnMarks.TabIndex = 13;
             this.btnMarks.Text = "Marks";
             this.btnMarks.UseVisualStyleBackColor = true;
@@ -130,6 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::UMS_System_2._0.Properties.Resources._360_F_232925587_st4gM8b3TJHtjjddCIUNyVyFJmZqMmn4;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnTimetables);

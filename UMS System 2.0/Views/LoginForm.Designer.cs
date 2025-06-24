@@ -42,6 +42,7 @@ namespace UnicomTICManagementSystem.Views
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Mytupi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(117, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 16);
@@ -54,6 +55,7 @@ namespace UnicomTICManagementSystem.Views
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Mytupi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(119, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 16);
@@ -91,7 +93,7 @@ namespace UnicomTICManagementSystem.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.BackgroundImage = global::UnicomTICManagementSystem.Properties.Resources.shapelined__JBKdviweXI_unsplash;
+            this.BackgroundImage = global::UMS_System_2._0.Properties.Resources._360_F_232925587_st4gM8b3TJHtjjddCIUNyVyFJmZqMmn4;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);

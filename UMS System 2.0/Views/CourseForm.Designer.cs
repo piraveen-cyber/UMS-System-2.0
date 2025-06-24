@@ -33,6 +33,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtCourseName = new System.Windows.Forms.TextBox();
+            this.lblCourse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,11 +85,25 @@
             this.txtCourseName.Size = new System.Drawing.Size(274, 20);
             this.txtCourseName.TabIndex = 6;
             // 
+            // lblCourse
+            // 
+            this.lblCourse.AutoSize = true;
+            this.lblCourse.BackColor = System.Drawing.Color.Transparent;
+            this.lblCourse.Font = new System.Drawing.Font("Mytupi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCourse.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCourse.Location = new System.Drawing.Point(43, 75);
+            this.lblCourse.Name = "lblCourse";
+            this.lblCourse.Size = new System.Drawing.Size(102, 16);
+            this.lblCourse.TabIndex = 11;
+            this.lblCourse.Text = "Course Name:";
+            // 
             // CourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::UMS_System_2._0.Properties.Resources._360_F_232925587_st4gM8b3TJHtjjddCIUNyVyFJmZqMmn4;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCourse);
             this.Controls.Add(this.dgvCourses);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -110,5 +125,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtCourseName;
+        private System.Windows.Forms.Label lblCourse;
     }
 }
