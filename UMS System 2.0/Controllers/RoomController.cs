@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using UnicomTICManagementSystem.Models;
 using UnicomTICManagementSystem.Repositories;
 
-namespace UnicomTICManagementSystem.Controllers
+namespace UMS_System_2._0.Controllers
 {
     public static class RoomController
     {

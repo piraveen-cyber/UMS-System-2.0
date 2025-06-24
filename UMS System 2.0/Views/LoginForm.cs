@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using UnicomTICManagementSystem.Controllers;
+using UMS_System_2._0.Controllers;
+using UMS_System_2._0.Views;
 
 namespace UnicomTICManagementSystem.Views
 {
@@ -25,40 +19,23 @@ namespace UnicomTICManagementSystem.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            string role = LoginController.CheckLogin(username, password);
+
+            if (role != null)
             {
-                string username = txtUsername.Text.Trim();
-                string password = txtPassword.Text.Trim();
-
-                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                {
-                    MessageBox.Show("Please enter both username and password.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                string role = LoginController.CheckLogin(username, password);
-
-                if (role != null)
-                {
-                    MessageBox.Show($"Login successful! Role: {role}", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-
-                    MainForm mainForm = new MainForm(role, username);
-                    mainForm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtPassword.Clear();
-                    txtPassword.Focus();
-                }
+                MessageBox.Show($"Login successful! Role: {role}");
+                this.Hide();
+                MainForm mainForm = new MainForm(role);
+                mainForm.Show();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wrong username or password.");
             }
         }
-
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
@@ -70,6 +47,9 @@ namespace UnicomTICManagementSystem.Views
 
         }
 
-       
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
