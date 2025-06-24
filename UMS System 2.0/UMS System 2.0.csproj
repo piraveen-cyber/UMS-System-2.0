@@ -96,7 +96,12 @@
     <Compile Include="Views\CourseForm.Designer.cs">
       <DependentUpon>CourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ExamForms.cs" />
+    <Compile Include="Views\ExamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ExamForm.Designer.cs">
+      <DependentUpon>ExamForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="Views\CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExamForm.resx">
+      <DependentUpon>ExamForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

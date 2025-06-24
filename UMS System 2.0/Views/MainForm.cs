@@ -63,9 +63,14 @@ namespace UMS_System_2._0.Views
 
         private void BtnExams_Click(object sender, EventArgs e)
         {
-            var form = new ExamForms();
+            var form = new ExamForm();
             form.ShowDialog();
         }
+
+        //private object GetForm()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private void btnMarks_Click(object sender, EventArgs e)
         {
@@ -98,7 +103,8 @@ namespace UMS_System_2._0.Views
 
         private void btnExams_Click(object sender, EventArgs e)
         {
-
+            var form = new ExamForm();
+            form.ShowDialog();
         }
 
         //private void btnSubjects_Click(object sender, EventArgs e)
